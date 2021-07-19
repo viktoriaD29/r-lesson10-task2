@@ -1,8 +1,8 @@
-import React from 'react';
-import ShoppingCart from './ShoppingCart';
-import Profile from './Profile';
+import React, { Component } from 'react';
+import ShoppingCart from './ShoppingCart.jsx';
+import Profile from './Profile.jsx';
 
-class App extends React.Component {
+class Page extends Component {
   state = {
     userData: {
       firstName: 'Tom',
@@ -10,7 +10,7 @@ class App extends React.Component {
     },
   };
 
-  handelChange = (event) => {
+  handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
       userData: {
@@ -21,15 +21,14 @@ class App extends React.Component {
   };
 
   render() {
-    const { userData } = this.state
     return (
       <div className="page">
-        <h1 className="title">{`Hello, ${userData.firstName} ${userData.lastName}`}</h1>
+        <h1 className="title">{`Hello, ${this.state.userData.firstName} ${this.state.userData.lastName}`}</h1>
         <main className="content">
           <ShoppingCart userName={this.state.userData.firstName} />
           <Profile
             userData={this.state.userData}
-            handelChange={this.handelChange}
+            handleChange={this.handleChange}
           />
         </main>
       </div>
@@ -37,4 +36,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Page;
