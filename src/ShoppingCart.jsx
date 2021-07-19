@@ -19,7 +19,7 @@ class ShoppingCart extends React.Component {
   };
 
   render() {
-    const count = this.state.cartItems.length
+    const count = this.state.cartItems.length;
     return (
       <div className="column">
         <CartTitle userName={this.props.userName} count={count} />
@@ -29,4 +29,4 @@ class ShoppingCart extends React.Component {
   }
 }
 
-export default ShoppingCart
+export default ShoppingCart;
