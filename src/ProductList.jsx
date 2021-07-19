@@ -11,12 +11,12 @@ class ProductList extends React.Component {
         <ul className="products__list">
           {this.props.cartItems.map(({id, name, price}) =>
             <li key={id} class="products__list-item">
-            <span class="products__item-name">{name}</span>
-            <span class="products__item-price">{price}</span>
+            <span className="products__item-name">{name}</span>
+            <span className="products__item-price">{`$${price}`}</span>
           </li>
           )}
         </ul>
-        <div className="products__total">{`Total: ${total}`}</div>
+        <div className="products__total">{`Total: $${total}`}</div>
       </div>
     );
   }

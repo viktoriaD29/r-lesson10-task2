@@ -2,7 +2,7 @@ import React from 'react';
 import ShoppingCart from './ShoppingCart';
 import Profile from './Profile';
 
-class Page extends React.Component {
+class App extends React.Component {
   state = {
     userData: {
       firstName: 'Tom',
@@ -26,7 +26,7 @@ class Page extends React.Component {
       <div className="page">
         <h1 className="title">{`Hello, ${userData.firstName} ${userData.lastName}`}</h1>
         <main className="content">
-          <ShoppingCart userData={this.state.userData} />
+          <ShoppingCart userName={this.state.userData.firstName} />
           <Profile
             userData={this.state.userData}
             handelChange={this.handelChange}
@@ -37,4 +37,4 @@ class Page extends React.Component {
   }
 }
 
-export default Page;
+export default App;
